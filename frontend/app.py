@@ -1,3 +1,6 @@
+# frontend/app.py 역할:
+# → Streamlit 화면을 만들고 사용자의 입력과 면접 코치 응답 출력을 관리한다.
+
 import json
 import sys
 import time

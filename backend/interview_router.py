@@ -1,5 +1,5 @@
-# interview_app/backend/interview_router.py
-# 면접 코치 FastAPI 라우터 파일
+# backend/interview_router.py 역할:
+# → FastAPI에서 면접 요청을 받아 SSE 형식으로 응답을 스트리밍한다.
 #
 # ===== self2 이후 연결 지점 TODO =====
 # TODO 1: UUID 세션 관리
