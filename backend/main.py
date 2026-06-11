@@ -1,9 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from backend.agents_router import router as agents_router
 from backend.interview_router import router as interview_router
 
-app = FastAPI(title="AI Interview Coach API")
+app = FastAPI(title="AI 이력서 챗봇")
 
 app.add_middleware(
     CORSMiddleware,
@@ -20,3 +21,4 @@ def health_check() -> dict[str, str]:
 
 
 app.include_router(interview_router)
+app.include_router(agents_router)
