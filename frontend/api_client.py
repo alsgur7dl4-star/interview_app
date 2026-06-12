@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 from typing import Any
 from collections.abc import Iterator
@@ -38,6 +39,22 @@ def stream_interview_message(message: str) -> Iterator[str]:
             if token == "[DONE]":
                 break
             yield token
+
+
+def stream_interview_agent(message: str, mode: str = "single") -> Iterator[dict[str, Any]]:
+    payload = {"message": message, "mode": mode}
+    url = f"{get_backend_url()}/agents/stream"
+    with httpx.stream("POST", url, json=payload, timeout=60.0) as response:
+        response.raise_for_status()
+        for line in response.iter_lines():
+            if not line:
+                continue
+            if not line.startswith("data:"):
+                continue
+            data = line[5:].strip()
+            if data == "[DONE]":
+                break
+            yield json.loads(data)
 
 
 def render_streaming_answer(placeholder: Any, message: str) -> str:
