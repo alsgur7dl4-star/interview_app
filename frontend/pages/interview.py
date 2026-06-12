@@ -2,7 +2,7 @@
 # 책임 메모:
 # - Day 3에서 완성한 면접 질문 입력과 SSE 응답 표시를 이어받습니다.
 # - st.session_state.settings에서 모델과 temperature를 읽습니다.
-# - 8주차 agents.py, roles.py, tools.py 파일은 수정하지 않습니다.
+# - 8주차 agents 역할 파일(coach_agents.py), roles.py, tools.py는 수정하지 않습니다.
 
 import streamlit as st
 

@@ -1,6 +1,6 @@
 # interview_app/frontend/utils.py
 # Day 5 self1: 로딩 UX · 에러 핸들링 · 응답 피드백 · 대화 검색 함수 골격
-# (8주차 roles.py, tools.py, agents.py는 이 파일에서 import하지 않습니다.)
+# (8주차 roles.py, tools.py, agents 역할 파일(coach_agents.py)은 이 파일에서 import하지 않습니다.)
 
 from __future__ import annotations
 
